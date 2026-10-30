@@ -1,0 +1,1109 @@
+﻿/* ==========================================================
+   PAYSIM FRAUD INTELLIGENCE
+   MIDNIGHT FINTECH DESIGN SYSTEM
+   ========================================================== */
+
+:root {
+    --bg-main: #0b1120;
+    --bg-sidebar: #101a2c;
+    --bg-card: #141f33;
+    --bg-card-hover: #1a2942;
+    --bg-input: #0e192b;
+
+    --border-color: #263650;
+
+    --text-primary: #edf3fc;
+    --text-secondary: #9aabc3;
+    --text-muted: #6f829e;
+
+    --accent-blue: #57a6ff;
+    --accent-cyan: #39d3d0;
+    --accent-green: #39c98a;
+    --accent-orange: #f5a742;
+    --accent-red: #f16d79;
+    --accent-purple: #a78bfa;
+
+    --radius-card: 16px;
+    --radius-input: 10px;
+
+    --shadow-card: 0 12px 32px rgba(0, 0, 0, 0.22);
+}
+
+
+/* ==========================================================
+   GLOBAL
+   ========================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(
+            circle at 80% 0%,
+            rgba(48, 95, 159, 0.15),
+            transparent 34%
+        ),
+        var(--bg-main);
+
+    color: var(--text-primary);
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    font-size: 14px;
+}
+
+#react-entry-point {
+    min-height: 100vh;
+}
+
+a {
+    color: var(--accent-blue);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--accent-cyan);
+}
+
+
+/* ==========================================================
+   APPLICATION SHELL
+   ========================================================== */
+
+.app-shell {
+    min-height: 100vh;
+    width: 100%;
+}
+
+.main-content {
+    min-width: 0;
+    padding: 26px 30px 40px;
+}
+
+.dashboard-container {
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.brand-area {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.brand-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 13px;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 800;
+
+    background: linear-gradient(
+        135deg,
+        #2677ce,
+        #32bdb9
+    );
+
+    box-shadow: 0 7px 20px rgba(48, 153, 220, 0.25);
+}
+
+.brand-title {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+}
+
+.brand-subtitle {
+    margin-top: 4px;
+    color: var(--text-secondary);
+    font-size: 10px;
+    letter-spacing: 1.7px;
+    text-transform: uppercase;
+}
+
+.topbar-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 12px;
+    border: 1px solid rgba(57, 201, 138, 0.25);
+    border-radius: 30px;
+    color: var(--accent-green);
+    background: rgba(57, 201, 138, 0.09);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent-green);
+    box-shadow: 0 0 10px rgba(57, 201, 138, 0.7);
+}
+
+
+/* ==========================================================
+   PAGE HEADER
+   ========================================================== */
+
+.page-heading {
+    margin-bottom: 24px;
+}
+
+.eyebrow {
+    margin-bottom: 8px;
+    color: var(--accent-cyan);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.page-title {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: clamp(24px, 3vw, 34px);
+    font-weight: 800;
+    letter-spacing: -0.7px;
+}
+
+.page-description {
+    margin-top: 8px;
+    max-width: 760px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.last-updated {
+    color: var(--text-muted);
+    font-size: 11px;
+}
+
+
+/* ==========================================================
+   FILTER PANEL
+   ========================================================== */
+
+.filter-panel {
+    display: grid;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr))
+        auto;
+
+    align-items: end;
+    gap: 16px;
+
+    margin-bottom: 24px;
+    padding: 19px;
+
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-card);
+
+    background: rgba(20, 31, 51, 0.82);
+    box-shadow: var(--shadow-card);
+}
+
+.filter-label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.filter-control {
+    width: 100%;
+}
+
+.filter-control .Select-control,
+.filter-control .Select-menu-outer,
+.filter-control input,
+.filter-control select {
+    border-radius: var(--radius-input);
+}
+
+
+/* ==========================================================
+   KPI CARDS
+   ========================================================== */
+
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 25px;
+}
+
+.kpi-card {
+    position: relative;
+    overflow: hidden;
+
+    min-width: 0;
+    padding: 21px;
+
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-card);
+
+    background: linear-gradient(
+        145deg,
+        rgba(24, 39, 63, 0.98),
+        rgba(17, 27, 45, 0.98)
+    );
+
+    box-shadow: var(--shadow-card);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.kpi-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(87, 166, 255, 0.4);
+}
+
+.kpi-card::after {
+    content: "";
+    position: absolute;
+    right: -28px;
+    top: -35px;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.045;
+}
+
+.kpi-blue {
+    color: var(--accent-blue);
+}
+
+.kpi-cyan {
+    color: var(--accent-cyan);
+}
+
+.kpi-orange {
+    color: var(--accent-orange);
+}
+
+.kpi-red {
+    color: var(--accent-red);
+}
+
+.kpi-purple {
+    color: var(--accent-purple);
+}
+
+.kpi-label {
+    margin-bottom: 13px;
+    color: var(--text-secondary);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.kpi-value {
+    color: var(--text-primary);
+    font-size: clamp(23px, 2.5vw, 31px);
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    font-variant-numeric: tabular-nums;
+}
+
+.kpi-footnote {
+    margin-top: 10px;
+    color: var(--text-muted);
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.kpi-icon {
+    margin-bottom: 13px;
+    font-size: 21px;
+}
+
+
+/* ==========================================================
+   CONTENT SECTIONS
+   ========================================================== */
+
+.section-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.section-card {
+    min-width: 0;
+    overflow: hidden;
+
+    padding: 20px;
+
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-card);
+
+    background: var(--bg-card);
+    box-shadow: var(--shadow-card);
+}
+
+.section-card-full {
+    grid-column: 1 / -1;
+}
+
+.section-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 17px;
+}
+
+.section-title {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.section-subtitle {
+    margin-top: 6px;
+    color: var(--text-muted);
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.chart-container {
+    min-width: 0;
+    width: 100%;
+}
+
+.chart-container .js-plotly-plot {
+    width: 100% !important;
+}
+
+.plotly {
+    font-family: "Segoe UI", Arial, sans-serif !important;
+}
+
+
+/* ==========================================================
+   TABLES
+   ========================================================== */
+
+.table-panel {
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.dash-table-container {
+    overflow-x: auto;
+}
+
+.dash-table-container .dash-spreadsheet-container {
+    background: transparent !important;
+}
+
+.dash-table-container .dash-spreadsheet-inner th {
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+.dash-table-container .dash-spreadsheet-inner td {
+    font-size: 11px !important;
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* ==========================================================
+   ALERT CENTER
+   ========================================================== */
+
+.alert-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    padding: 13px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.alert-row:last-child {
+    border-bottom: 0;
+}
+
+.alert-high {
+    color: var(--accent-red);
+}
+
+.alert-medium {
+    color: var(--accent-orange);
+}
+
+.risk-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 30px;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.risk-low {
+    color: var(--accent-green);
+    background: rgba(57, 201, 138, 0.12);
+}
+
+.risk-medium {
+    color: var(--accent-orange);
+    background: rgba(245, 167, 66, 0.12);
+}
+
+.risk-high {
+    color: var(--accent-red);
+    background: rgba(241, 109, 121, 0.12);
+}
+
+
+/* ==========================================================
+   BUTTONS
+   ========================================================== */
+
+.btn-refresh {
+    min-height: 39px;
+    padding: 9px 16px;
+
+    border: 1px solid rgba(87, 166, 255, 0.35);
+    border-radius: var(--radius-input);
+
+    background: rgba(87, 166, 255, 0.12);
+    color: var(--accent-blue);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    transition: all 0.2s ease;
+}
+
+.btn-refresh:hover {
+    border-color: var(--accent-blue);
+    background: rgba(87, 166, 255, 0.2);
+    color: #ffffff;
+}
+
+.btn-refresh:active {
+    transform: scale(0.98);
+}
+
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+
+.dashboard-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+
+    margin-top: 25px;
+    padding-top: 17px;
+
+    border-top: 1px solid var(--border-color);
+
+    color: var(--text-muted);
+    font-size: 10px;
+}
+
+
+/* ==========================================================
+   LOADING AND EMPTY STATES
+   ========================================================== */
+
+.loading-state {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 130px;
+    color: var(--text-secondary);
+}
+
+.empty-state {
+    padding: 35px 15px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.connection-error {
+    padding: 12px 15px;
+    border: 1px solid rgba(241, 109, 121, 0.3);
+    border-radius: 10px;
+    color: var(--accent-red);
+    background: rgba(241, 109, 121, 0.08);
+}
+
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+   ========================================================== */
+
+@media (max-width: 1100px) {
+
+    .kpi-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .filter-panel {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 760px) {
+
+    .main-content {
+        padding: 19px 14px 30px;
+    }
+
+    .section-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-card-full {
+        grid-column: auto;
+    }
+
+    .filter-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .dashboard-footer {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 440px) {
+
+    .kpi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .kpi-card {
+        padding: 17px;
+    }
+
+    .page-title {
+        font-size: 24px;
+    }
+}
+
+/* =========================================================
+   DASHBOARD DROPDOWN READABILITY FIX
+   Midnight FinTech Theme
+   ========================================================= */
+
+/* Main dropdown control */
+.filter-control,
+.filter-control .Select-control,
+.filter-control .Select__control,
+.filter-control [class*="-control"] {
+    background-color: #0b1728 !important;
+    border: 1px solid #35506f !important;
+    color: #edf4ff !important;
+    box-shadow: none !important;
+}
+
+/* Selected value */
+.filter-control .Select-value-label,
+.filter-control .Select__single-value,
+.filter-control [class*="-singleValue"] {
+    color: #edf4ff !important;
+}
+
+/* Placeholder text */
+.filter-control .Select-placeholder,
+.filter-control .Select__placeholder,
+.filter-control [class*="-placeholder"] {
+    color: #a9bbd2 !important;
+}
+
+/* Search input inside dropdown */
+.filter-control .Select-input > input,
+.filter-control .Select__input input,
+.filter-control [class*="-input"] input {
+    color: #ffffff !important;
+    background-color: transparent !important;
+    caret-color: #22d3ee !important;
+}
+
+/* Dropdown menu */
+.filter-control .Select-menu-outer,
+.filter-control .Select__menu,
+.filter-control [class*="-menu"] {
+    background-color: #111d31 !important;
+    border: 1px solid #35506f !important;
+    color: #edf4ff !important;
+    z-index: 9999 !important;
+}
+
+/* All dropdown options */
+.filter-control .Select-option,
+.filter-control .VirtualizedSelectOption,
+.filter-control .Select__option,
+.filter-control [class*="-option"] {
+    background-color: #111d31 !important;
+    color: #edf4ff !important;
+    cursor: pointer !important;
+}
+
+/* Hovered and selected options */
+.filter-control .Select-option.is-focused,
+.filter-control .Select-option.is-selected,
+.filter-control .VirtualizedSelectFocusedOption,
+.filter-control .Select__option--is-focused,
+.filter-control .Select__option--is-selected,
+.filter-control [class*="-option"][aria-selected="true"] {
+    background-color: #164768 !important;
+    color: #ffffff !important;
+}
+
+/* Dropdown arrows and indicators */
+.filter-control .Select-arrow,
+.filter-control .Select__indicator,
+.filter-control [class*="-indicator"] {
+    color: #a9bbd2 !important;
+}
+
+/* Focused dropdown border */
+.filter-control .Select-control.is-focused,
+.filter-control .Select__control--is-focused {
+    border-color: #22d3ee !important;
+    box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.15) !important;
+}
+
+
+/* =========================================================
+   PASTEL NEON DROPDOWN DESIGN SYSTEM
+   Independent of browser light/dark preference
+   ========================================================= */
+
+:root {
+    --dd-bg: #17263D;
+    --dd-menu: #1B2B43;
+    --dd-border: #526B8D;
+    --dd-ice: #B9E7FA;
+    --dd-mauve: #D6B9F0;
+    --dd-mint: #83E6D0;
+    --dd-lavender: #A9B8FA;
+    --dd-peach: #F4C8A8;
+    --dd-rose: #F1C6D9;
+}
+
+/* Filter labels */
+.filter-label {
+    color: var(--dd-lavender) !important;
+    font-weight: 800 !important;
+    letter-spacing: 1px;
+}
+
+/* Dropdown container */
+.filter-control,
+.filter-control .Select-control,
+.filter-control .Select__control,
+.filter-control [class*="-control"] {
+    background: var(--dd-bg) !important;
+    border: 1px solid var(--dd-border) !important;
+    color: var(--dd-ice) !important;
+    color-scheme: dark !important;
+    box-shadow: none !important;
+}
+
+/* Selected dropdown value */
+.filter-control .Select-value-label,
+.filter-control .Select__single-value,
+.filter-control [class*="-singleValue"] {
+    color: var(--dd-ice) !important;
+    font-weight: 700 !important;
+}
+
+/* Placeholder */
+.filter-control .Select-placeholder,
+.filter-control .Select__placeholder,
+.filter-control [class*="-placeholder"] {
+    color: var(--dd-mauve) !important;
+}
+
+/* Search text */
+.filter-control .Select-input input,
+.filter-control .Select__input input,
+.filter-control [class*="-input"] input {
+    color: var(--dd-mint) !important;
+    background: transparent !important;
+    caret-color: var(--dd-ice) !important;
+}
+
+/* Dropdown options menu */
+.filter-control .Select-menu-outer,
+.filter-control .Select__menu,
+.filter-control [class*="-menu"] {
+    background: var(--dd-menu) !important;
+    border: 1px solid var(--dd-border) !important;
+    color: var(--dd-mauve) !important;
+    z-index: 99999 !important;
+}
+
+/* Individual options */
+.filter-control .Select-option,
+.filter-control .VirtualizedSelectOption,
+.filter-control .Select__option,
+.filter-control [class*="-option"] {
+    background: var(--dd-menu) !important;
+    color: var(--dd-mauve) !important;
+    font-weight: 600 !important;
+}
+
+/* Hover and keyboard focus */
+.filter-control .Select-option.is-focused,
+.filter-control .VirtualizedSelectFocusedOption,
+.filter-control .Select__option--is-focused {
+    background: #24445D !important;
+    color: var(--dd-ice) !important;
+}
+
+/* Selected option */
+.filter-control .Select-option.is-selected,
+.filter-control .Select__option--is-selected,
+.filter-control [aria-selected="true"] {
+    background: #30436B !important;
+    color: var(--dd-mint) !important;
+    font-weight: 800 !important;
+}
+
+/* Dropdown arrows */
+.filter-control .Select-arrow,
+.filter-control .Select__indicator,
+.filter-control [class*="-indicator"] {
+    color: var(--dd-lavender) !important;
+}
+
+/* Focus border */
+.filter-control .Select-control.is-focused,
+.filter-control .Select__control--is-focused,
+.filter-control [class*="-control"]:focus-within {
+    border-color: var(--dd-ice) !important;
+    box-shadow: 0 0 0 3px rgba(185, 231, 250, 0.16) !important;
+}
+
+/* Keep text readable in dropdown regardless of system theme */
+.filter-control,
+.filter-control * {
+    text-shadow: none !important;
+}
+
+
+/* =========================================================
+   FINAL DEEP BURGUNDY FINTECH OVERRIDE
+   Explicit colors for Light and Dark browser environments
+   ========================================================= */
+
+:root {
+    --wine-dark: #4B142C;
+    --wine-mid: #752647;
+    --wine-hover: #E2C5D3;
+    --wine-text: #FFF1F5;
+    --wine-menu: #F7E8EE;
+    --wine-ink: #4B142C;
+    --wine-mauve: #DCC9F2;
+    --wine-blue: #B9E7FA;
+    --wine-mint: #83E6D0;
+    --wine-border: #B77A94;
+}
+
+/* FILTER LABELS */
+.filter-panel .filter-label,
+.filter-group label {
+    color: #DCC9F2 !important;
+    font-weight: 800 !important;
+}
+
+/* DROPDOWN CLOSED CONTROL */
+#split-filter .Select-control,
+#type-filter .Select-control,
+#risk-filter .Select-control,
+#alert-status-filter .Select-control,
+#alert-type-filter .Select-control,
+.filter-control .Select-control,
+.filter-control .Select__control,
+.filter-control [class*="-control"] {
+    background: #4B142C !important;
+    color: #FFF1F5 !important;
+    border: 1px solid #B77A94 !important;
+    box-shadow: none !important;
+    color-scheme: dark !important;
+}
+
+/* SELECTED TEXT */
+.filter-control .Select-value-label,
+.filter-control .Select__single-value,
+.filter-control .Select-value,
+.filter-control [class*="-singleValue"],
+#split-filter .Select-value-label,
+#type-filter .Select-value-label,
+#risk-filter .Select-value-label {
+    color: #FFF1F5 !important;
+    -webkit-text-fill-color: #FFF1F5 !important;
+    font-weight: 700 !important;
+    opacity: 1 !important;
+}
+
+/* SEARCH INPUT */
+.filter-control input,
+.filter-control .Select-input input,
+.filter-control .Select__input input {
+    color: #FFF1F5 !important;
+    -webkit-text-fill-color: #FFF1F5 !important;
+    background: transparent !important;
+    caret-color: #B9E7FA !important;
+}
+
+/* OPEN DROPDOWN MENU */
+.filter-control .Select-menu-outer,
+.filter-control .Select__menu,
+.filter-control [class*="-menu"] {
+    background: #F7E8EE !important;
+    border: 1px solid #B77A94 !important;
+    color: #4B142C !important;
+    opacity: 1 !important;
+    z-index: 99999 !important;
+}
+
+/* EVERY OPTION */
+.filter-control .Select-option,
+.filter-control .VirtualizedSelectOption,
+.filter-control .Select__option,
+.filter-control [class*="-option"] {
+    background: #F7E8EE !important;
+    color: #4B142C !important;
+    -webkit-text-fill-color: #4B142C !important;
+    font-weight: 700 !important;
+    opacity: 1 !important;
+}
+
+/* HOVER AND FOCUS */
+.filter-control .Select-option.is-focused,
+.filter-control .VirtualizedSelectFocusedOption,
+.filter-control .Select__option--is-focused {
+    background: #DCC9F2 !important;
+    color: #4B142C !important;
+    -webkit-text-fill-color: #4B142C !important;
+}
+
+/* SELECTED OPTION */
+.filter-control .Select-option.is-selected,
+.filter-control .Select__option--is-selected,
+.filter-control [aria-selected="true"] {
+    background: #E2C5D3 !important;
+    color: #4B142C !important;
+    -webkit-text-fill-color: #4B142C !important;
+    font-weight: 900 !important;
+}
+
+/* DROPDOWN ARROWS */
+.filter-control .Select-arrow,
+.filter-control .Select__indicator,
+.filter-control [class*="-indicator"] {
+    color: #DCC9F2 !important;
+}
+
+/* REFRESH BUTTON */
+.btn-refresh,
+.btn-refresh:hover,
+.btn-refresh:focus,
+.btn-refresh:active,
+.btn-refresh * {
+    background-color: #4B142C !important;
+    background-image: none !important;
+    border-color: #B77A94 !important;
+    color: #FFF1F5 !important;
+    -webkit-text-fill-color: #FFF1F5 !important;
+}
+
+/* REFRESH BUTTON HOVER */
+.btn-refresh:hover {
+    background-color: #752647 !important;
+    border-color: #B9E7FA !important;
+}
+
+/* INPUTS INSIDE FILTER PANEL */
+.filter-panel input,
+.filter-panel input:focus {
+    background-color: #4B142C !important;
+    color: #FFF1F5 !important;
+    -webkit-text-fill-color: #FFF1F5 !important;
+    border-color: #B77A94 !important;
+    caret-color: #B9E7FA !important;
+}
+
+/* PREVENT FADED TEXT */
+.filter-control,
+.filter-control * {
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+
+/* =========================================================
+   FINAL PREMIUM HEADER AND BANNER TYPOGRAPHY
+   ========================================================= */
+
+/* Main brand banner */
+.brand-area {
+    background: linear-gradient(
+        120deg,
+        #17324D,
+        #263D58
+    ) !important;
+    border: 1px solid #48617D !important;
+    border-radius: 14px !important;
+    padding: 14px 18px !important;
+}
+
+/* Brand logo */
+.brand-mark {
+    background: #752647 !important;
+    color: #FFF1F5 !important;
+    border: 1px solid #D6A8BC !important;
+}
+
+/* FRAUD INTELLIGENCE */
+.brand-title {
+    color: #F4E6C8 !important;
+    font-weight: 900 !important;
+    letter-spacing: 1.2px !important;
+    text-shadow: none !important;
+}
+
+/* FINANCIAL RISK MONITORING PLATFORM */
+.brand-subtitle {
+    color: #B9E7FA !important;
+    font-weight: 700 !important;
+    letter-spacing: 1.4px !important;
+}
+
+/* Executive Overview */
+.page-title {
+    color: #F4E6C8 !important;
+    font-weight: 900 !important;
+}
+
+/* Page descriptions */
+.page-description {
+    color: #D7E2EF !important;
+    font-weight: 500 !important;
+    line-height: 1.8 !important;
+}
+
+/* INVESTIGATION WORKSPACE and section labels */
+.eyebrow {
+    color: #D8C5EF !important;
+    background: rgba(216, 197, 239, 0.10) !important;
+    border: 1px solid rgba(216, 197, 239, 0.25) !important;
+    border-radius: 7px !important;
+    padding: 7px 12px !important;
+    display: inline-block !important;
+    font-weight: 900 !important;
+    letter-spacing: 1.3px !important;
+}
+
+/* Section titles */
+.section-title {
+    color: #B9E7FA !important;
+    font-weight: 800 !important;
+}
+
+/* Section subtitles */
+.section-subtitle {
+    color: #C5D2E2 !important;
+}
+
+/* KPI labels and descriptions */
+.kpi-label {
+    color: #D8C5EF !important;
+    font-weight: 800 !important;
+}
+
+.kpi-footnote {
+    color: #B9C9DA !important;
+}
+
+.kpi-value {
+    color: #F4E6C8 !important;
+    font-weight: 900 !important;
+}
+
+/* Filter headings */
+.filter-label {
+    color: #D8C5EF !important;
+    font-weight: 900 !important;
+}
+
+/* Database and refresh information */
+.last-updated {
+    color: #B9E7FA !important;
+}
+
+/* Prevent Bootstrap from overriding dashboard headings */
+.app-shell h1,
+.app-shell h2,
+.app-shell h3,
+.app-shell h4 {
+    text-shadow: none !important;
+}
+
