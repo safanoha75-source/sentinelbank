@@ -1,0 +1,57 @@
+{
+    "model": "SGDClassifier",
+    "evaluation_data": "validation",
+    "test_data_used": false,
+    "validation_rows": 191147,
+    "validation_fraud": 1180,
+    "average_precision_raw_scores": 0.9950860324361949,
+    "old_average_precision_probability": 0.20462499634861064,
+    "threshold_selection_method": "precision_recall_curve_using_raw_decision_function",
+    "threshold_candidates": {
+        "MAXIMUM_F1": {
+            "threshold": 213.80866687194845,
+            "precision": 1.0,
+            "recall": 0.9940677966101695,
+            "f1_score": 0.9970250743731407,
+            "true_negative": 189967,
+            "false_positive": 0,
+            "false_negative": 7,
+            "true_positive": 1173,
+            "predicted_fraud": 1173
+        },
+        "RECALL_0.95": {
+            "threshold": 213.80866687194845,
+            "precision": 1.0,
+            "recall": 0.9940677966101695,
+            "f1_score": 0.9970250743731407,
+            "true_negative": 189967,
+            "false_positive": 0,
+            "false_negative": 7,
+            "true_positive": 1173,
+            "predicted_fraud": 1173
+        },
+        "RECALL_0.9": {
+            "threshold": 213.80866687194845,
+            "precision": 1.0,
+            "recall": 0.9940677966101695,
+            "f1_score": 0.9970250743731407,
+            "true_negative": 189967,
+            "false_positive": 0,
+            "false_negative": 7,
+            "true_positive": 1173,
+            "predicted_fraud": 1173
+        },
+        "RECALL_0.8": {
+            "threshold": 213.80866687194845,
+            "precision": 1.0,
+            "recall": 0.9940677966101695,
+            "f1_score": 0.9970250743731407,
+            "true_negative": 189967,
+            "false_positive": 0,
+            "false_negative": 7,
+            "true_positive": 1173,
+            "predicted_fraud": 1173
+        }
+    },
+    "recommended_threshold_selected": false
+}

@@ -1,0 +1,59 @@
+{
+    "test_name": "Risk Engine Integration Test",
+    "source": "Original PaySim CSV",
+    "period": "Validation",
+    "target_column_loaded": false,
+    "test_period_used": false,
+    "risk_thresholds": {
+        "medium": 54.304175371966295,
+        "high": 213.80866687194845
+    },
+    "results": [
+        {
+            "transaction_id": "VALIDATION_LOW_SAMPLE",
+            "transaction_type": "CASH_OUT",
+            "amount": 188316.33,
+            "raw_decision_score": -137.72124872236967,
+            "risk_level": "LOW",
+            "recommended_action": "MONITOR",
+            "alert_required": false,
+            "simulated_hold": false,
+            "score_type": "raw_decision_score",
+            "prediction_scenario": "post_transaction_monitoring",
+            "note": "Simulated monitoring decision only. No real banking transaction is blocked."
+        },
+        {
+            "transaction_id": "VALIDATION_MEDIUM_SAMPLE",
+            "transaction_type": "TRANSFER",
+            "amount": 413004.56,
+            "raw_decision_score": 156.88401862564984,
+            "risk_level": "MEDIUM",
+            "recommended_action": "MANUAL_REVIEW",
+            "alert_required": false,
+            "simulated_hold": false,
+            "score_type": "raw_decision_score",
+            "prediction_scenario": "post_transaction_monitoring",
+            "note": "Simulated monitoring decision only. No real banking transaction is blocked."
+        },
+        {
+            "transaction_id": "VALIDATION_HIGH_SAMPLE",
+            "transaction_type": "TRANSFER",
+            "amount": 98086.09,
+            "raw_decision_score": 455.4181676266738,
+            "risk_level": "HIGH",
+            "recommended_action": "ALERT_AND_SIMULATED_HOLD",
+            "alert_required": true,
+            "simulated_hold": true,
+            "score_type": "raw_decision_score",
+            "prediction_scenario": "post_transaction_monitoring",
+            "note": "Simulated monitoring decision only. No real banking transaction is blocked."
+        }
+    ],
+    "risk_levels_passed": [
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+    ],
+    "all_checks_passed": true,
+    "real_banking_actions_executed": false
+}

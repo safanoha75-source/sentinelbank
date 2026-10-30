@@ -1,0 +1,93 @@
+{
+    "model": "SGDClassifier",
+    "threshold": 1.0,
+    "classes": {
+        "NORMAL": {
+            "count": 189967,
+            "scores_ge_35": 4804,
+            "percentiles": {
+                "0": -694.897100511856,
+                "25": -336.06421922136354,
+                "50": -300.55012910816805,
+                "75": -177.53881566978572,
+                "90": -98.31549874947481,
+                "95": -20.642473276307133,
+                "99": 54.304175371966295,
+                "99.9": 147.81260111312096,
+                "100": 203.60750856945617
+            }
+        },
+        "FRAUD": {
+            "count": 1180,
+            "scores_ge_35": 1174,
+            "percentiles": {
+                "0": -200.38596983718867,
+                "25": 303.5450456303433,
+                "50": 348.1710029606529,
+                "75": 479.541483461342,
+                "90": 504.66183646569453,
+                "95": 513.8873959316662,
+                "99": 530.768553451633,
+                "99.9": 535.9154911435835,
+                "100": 537.0336588675409
+            }
+        }
+    },
+    "top_coefficients": [
+        {
+            "feature": "orig_balance_emptied",
+            "coefficient": 102.02528373197259,
+            "absolute_coefficient": 102.02528373197259
+        },
+        {
+            "feature": "type_PAYMENT",
+            "coefficient": -92.31804158450453,
+            "absolute_coefficient": 92.31804158450453
+        },
+        {
+            "feature": "orig_balance_mismatch",
+            "coefficient": -89.72764568153542,
+            "absolute_coefficient": 89.72764568153542
+        },
+        {
+            "feature": "orig_balance_error_signed_log",
+            "coefficient": 82.68497961600417,
+            "absolute_coefficient": 82.68497961600417
+        },
+        {
+            "feature": "type_TRANSFER",
+            "coefficient": 47.7711128914891,
+            "absolute_coefficient": 47.7711128914891
+        },
+        {
+            "feature": "type_CASH_OUT",
+            "coefficient": 37.49273194625355,
+            "absolute_coefficient": 37.49273194625355
+        },
+        {
+            "feature": "type_CASH_IN",
+            "coefficient": 34.064991095434436,
+            "absolute_coefficient": 34.064991095434436
+        },
+        {
+            "feature": "log_amount",
+            "coefficient": 26.06632777654491,
+            "absolute_coefficient": 26.06632777654491
+        },
+        {
+            "feature": "dest_balance_error_signed_log",
+            "coefficient": 21.4811844648752,
+            "absolute_coefficient": 21.4811844648752
+        },
+        {
+            "feature": "type_DEBIT",
+            "coefficient": -19.529351114995507,
+            "absolute_coefficient": 19.529351114995507
+        },
+        {
+            "feature": "dest_balance_mismatch",
+            "coefficient": 18.670366021262375,
+            "absolute_coefficient": 18.670366021262375
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "model": "SGDClassifier",
+    "loss": "log_loss",
+    "prediction_scenario": "post_transaction_monitoring",
+    "training_rows": 6082007,
+    "training_normal": 6076226,
+    "training_fraud": 5781,
+    "validation_rows": 191147,
+    "validation_fraud": 1180,
+    "selected_threshold": 1.0,
+    "threshold_selection_method": "maximum_validation_f1",
+    "precision": 0.20549623665324698,
+    "recall": 0.9949152542372881,
+    "f1_score": 0.3406354272450312,
+    "average_precision": 0.20462499634861064,
+    "confusion_matrix": {
+        "true_negative": 185428,
+        "false_positive": 4539,
+        "false_negative": 6,
+        "true_positive": 1174
+    },
+    "feature_names": [
+        "log_amount",
+        "orig_balance_emptied",
+        "orig_balance_error_signed_log",
+        "dest_balance_error_signed_log",
+        "orig_balance_mismatch",
+        "dest_balance_mismatch",
+        "type_CASH_IN",
+        "type_CASH_OUT",
+        "type_DEBIT",
+        "type_PAYMENT",
+        "type_TRANSFER"
+    ],
+    "test_data_used": false
+}

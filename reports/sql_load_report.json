@@ -1,0 +1,31 @@
+{
+    "database": "PaySimFraudDB",
+    "model": "SGDClassifier",
+    "model_version": "sgd_logloss_raw_v1",
+    "source_rows_scanned": 6362620,
+    "new_transactions_loaded_this_run": 280613,
+    "new_fraud_cases_this_run": 2432,
+    "new_alerts_and_reviews_this_run": 5255,
+    "total_database_alerts": 5255,
+    "threshold_source": "validation",
+    "training_period_loaded": false,
+    "isFraud_used_as_model_feature": false,
+    "real_banking_actions_executed": false,
+    "database_summary": {
+        "TEST": {
+            "transactions": 89466,
+            "actual_fraud": 1252,
+            "predicted_fraud": 1236,
+            "high_risk": 1236,
+            "medium_risk": 945
+        },
+        "VALIDATION": {
+            "transactions": 191147,
+            "actual_fraud": 1180,
+            "predicted_fraud": 1173,
+            "high_risk": 1173,
+            "medium_risk": 1901
+        }
+    },
+    "all_expected_counts_verified": true
+}

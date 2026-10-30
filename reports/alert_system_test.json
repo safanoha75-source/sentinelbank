@@ -1,0 +1,15 @@
+{
+    "test_name": "Alert System Integration Test",
+    "source": "Risk Engine Validation Smoke Test",
+    "decisions_received": 3,
+    "events_recorded": 3,
+    "decision_log_records": 3,
+    "high_alert_records": 1,
+    "manual_review_records": 1,
+    "low_risk_records": 1,
+    "medium_risk_records": 1,
+    "high_risk_records": 1,
+    "real_notifications_sent": false,
+    "real_banking_actions_executed": false,
+    "all_checks_passed": true
+}
